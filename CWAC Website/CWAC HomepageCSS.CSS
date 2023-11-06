@@ -1,0 +1,448 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  min-height:100%;
+  font-family:montserrat;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+.navbar{
+  display:flex;
+  min-width:100%;
+  height:120px;
+  align-items:center;
+  flex-direction: row;
+  background-color:black;
+  position:sticky;
+  top:0;
+  z-index:3;
+}
+/*=============navbar============*/
+.navbar ul{
+  display:flex;
+  align-items:center;
+  list-style:none;
+}
+.navbar li{
+  float:left;
+  border-style:none;
+  border-color:black;
+  padding:10px 15px;
+}
+.navbar li:first-child{
+  border-color:black;
+  padding-right:20px;
+}
+.navbar a{
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+.droplink{
+  cursor:pointer;
+}
+.fixcontent{
+  display:none;
+  position:absolute;
+  background-color:black;
+  padding-top:10px;
+  z-index:3;
+}
+.fixdropdown:hover .fixcontent{
+ display:block;
+ position:absolute;
+ z-index:3;
+}
+.fixcontent a{
+  display:block;
+  padding:10px 15px;
+}
+.links a::after{
+  content:'';
+  background-color:#ff0000;
+  display:block;
+  height:3px;
+  width:0%;
+  margin-top:4px;
+}
+.links a:hover::after{
+  content:'';
+  background-color:#ff0000;
+  display:block;
+  height:3px;
+  transition:width 0.5s;
+  width:100%;
+  margin-top:4px;
+}
+.links a::before{
+  content:'';
+  background-color:#ff0000;
+  display:block;
+  height:3px;
+  width:0%;
+  margin-bottom:4px;
+}
+.links a:hover::before{
+  content:'';
+  background-color:#ff0000;
+  display:block;
+  height:3px;
+  transition:width 0.5s;
+  width:100%;
+  margin-bottom:4px;
+}
+.links a:hover{
+  color:#ff0000;
+  transition:color 0.3s;
+}
+/*=======================navbar===================*/
+
+
+
+
+
+/*====================menus wrapper==============*/
+.menus{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  min-height:100%;
+}
+/*=====================menus wrapper===================*/
+
+/*======================amazons menu===================*/
+.amazonsmenu:hover .hovermenuamazons{
+  display:flex;
+}
+.amazonsmenu{
+  display:inline-flex;
+  width:33.33%;
+  background-image:url("amazonmenuph.jpg");
+  background-position:top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:81vh;
+  justify-content:center;
+  align-items:center;
+  transition:width 1s;
+  z-index:0;
+  overflow:hidden;
+}
+
+.hovermenuamazons a{
+  text-decoration:none;
+  color:white;
+  font-size:6vh;
+  font-weight:bold;
+  visibility: hidden;
+  opacity:0%;
+  transition:opacity 0.5s;
+  font-family:"public sans";
+}
+
+.amazonsmenu:hover{
+  width:100%;
+  transition:width 0.7s;
+  z-index:2;
+}
+.hovermenuamazons{
+  height:80%;
+  width:100%;
+  display:none;
+  flex-direction: column;
+ align-items:center;
+ justify-content:center;
+ position:absolute;
+ z-index:1;
+}
+.hovermenuamazons:hover{
+  width:100%;
+}
+.hovermenuamazons img{
+width:18vh;
+height:auto;
+opacity:0%;
+}
+.vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:1vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:0%;
+}
+.hovermenuamazons:hover img{
+opacity:100%;
+transition:opacity 1s ease-in-out;
+transition-delay:0.2s;
+}
+
+.hovermenuamazons:hover .vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:13vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:100%;
+  transition:opacity 1s, height 0.5s;
+  transition-delay:0.7s;
+}
+.hovermenuamazons:hover a{
+  visibility: visible;
+  opacity: 100%;
+  transition:opacity 1s, visibility 2s;
+  transition-delay:1.2s;
+}
+.hovermenuamazons a:hover{
+  color:#ff0000;
+  transition:color 0.5s;
+}
+.menu h1{
+  position:absolute;
+  color:white;
+  font-size:12vh;
+  z-index:1;
+  font-family:Teko;
+  font-weight:bold;
+}
+.amazonsmenu:hover h1{
+  display:none;
+}
+.menudark{
+  background-color:black;
+  opacity:33%;
+  width:100%;
+  height:100%;
+}
+.amazonsmenu:hover .menudark{
+  opacity:66%;
+  transition:opacity 0.2s ease-out;
+}
+/*=====================amazons menu===================*/
+
+/*======================Titans menu===================*/
+.titansmenu{
+  display:inline-flex;
+  width:33.33%;
+  background-image:url("titanmenuph.jpg");
+  background-position:top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:81vh;
+  justify-content:center;
+  align-items:center;
+  transition:width 1s;
+  border-left-style:solid;
+  border-right-style:solid;
+  border-width:1px;
+  border-color:#ff0000;
+  z-index:2;
+  overflow:hidden;
+}
+.hovermenutitans a{
+  text-decoration:none;
+  color:white;
+  font-size:6vh;
+  font-weight:bold;
+  opacity:0%;
+  transition:opacity 0.5s;
+  font-family:"Public Sans";
+  visibility:hidden;
+  opacity:0%;
+}
+.titansmenu:hover{
+  width:66.66%;
+  transition:width 0.7s;
+  z-index:2;
+}
+.hovermenutitans{
+  height:80%;
+  width:33%;
+  display:flex;
+  flex-direction: column;
+ align-items:center;
+ justify-content:center;
+ z-index:1;
+ position:absolute;
+}
+.hovermenutitans:hover{
+  width:50%;
+}
+.hovermenutitans img{
+width:18vh;
+height:auto;
+opacity:0%;
+}
+.vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:1vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:0%;
+}
+.hovermenutitans:hover img{
+opacity:100%;
+transition:opacity 1s ease-in-out;
+transition-delay:0.2s;
+}
+
+.hovermenutitans:hover .vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:13vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:100%;
+  transition:opacity 1s, height 0.5s;
+  transition-delay:0.7s;
+}
+.hovermenutitans:hover a{
+  visibility: visible;
+  opacity: 100%;
+  transition:opacity 1s, visibility 2s;
+  transition-delay:1.2s;
+}
+.hovermenutitans a:hover{
+  color:#ff0000;
+  transition:color 0.5s;
+}
+h1{
+  position:absolute;
+  color:white;
+  font-size:12vh;
+  z-index:1;
+  font-family:"teko";
+  font-weight:bold;
+}
+.titansmenu:hover h1{
+  display:none;
+}
+.menudark{
+  background-color:black;
+  opacity:33%;
+  width:100%;
+  height:100%;
+}
+.titansmenu:hover .menudark{
+  opacity:66%;
+  transition:opacity 0.2s ease-out;
+}
+/*=========================Titans menu================*/
+.trojansmenu:hover .hovermenutrojans{
+  display:flex;
+}
+.trojansmenu{
+  display:inline-flex;
+  width:33.33%;
+  background-image:url("trojanmenuph.jpg");
+  background-position:top;
+  background-size:cover;
+  background-repeat:no-repeat;
+  height:81vh;
+  justify-content:center;
+  align-items:center;
+  transition:width 1s;
+  z-index:0;
+}
+.hovermenutrojans a{
+  text-decoration:none;
+  color:white;
+  font-size:6vh;
+  font-weight:bold;
+  opacity:0%;
+  transition:opacity 0.5s;
+  font-family:"Public Sans";
+  visibility:hidden;
+}
+.trojansmenu:hover{
+  width:100%;
+  transition:width 0.7s;
+  z-index:2;
+}
+.hovermenutrojans{
+  height:80%;
+  width:59%;
+  display:none;
+  flex-direction: column;
+ align-items:center;
+ justify-content:center;
+ z-index:1;
+ position:absolute;
+}
+.hovermenutrojans img{
+width:18vh;
+height:auto;
+opacity:0%;
+}
+.vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:1vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:0%;
+}
+.hovermenutrojans:hover img{
+opacity:100%;
+transition:opacity 1s ease-in-out;
+transition-delay:0.2s;
+}
+
+.hovermenutrojans:hover .vertical{
+  border-left-style:solid;
+  border-left-color:white;
+  border-left-width:1px;
+  height:13vh;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  opacity:100%;
+  transition:opacity 1s, height 0.5s;
+  transition-delay:0.7s;
+}
+.hovermenutrojans:hover a{
+  visibility: visible;
+  opacity: 100%;
+  transition:opacity 1s, visibility 2s;
+  transition-delay:1.2s;
+}
+.hovermenutrojans a:hover{
+  color:#ff0000;
+  transition:color 0.5s;
+}
+h1{
+  position:absolute;
+  color:white;
+  font-size:12vh;
+  z-index:1;
+  font-family:"teko";
+  font-weight:bold;
+}
+.trojansmenu:hover h1{
+  display:none;
+}
+.menudark{
+  background-color:black;
+  opacity:33%;
+  width:100%;
+  height:100%;
+}
+.trojansmenu:hover .menudark{
+  opacity:66%;
+  transition:opacity 0.2s ease-out;
+}
+/*==================trojans menu==============*/
+
+/*====================video element====================*/
+.videowrapper{
+ display:inline-block;
+ width:100%;
+ height:80vh;
+}
